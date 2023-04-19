@@ -1,0 +1,307 @@
+2023-04-03 19:34:54,919 - scrapy.utils.log - INFO - Scrapy 2.5.0 started (bot: base-crawler)
+2023-04-03 19:34:55,436 - scrapy.utils.log - INFO - Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.4.0, Python 3.9.16 (main, Mar 23 2023, 04:38:25) - [GCC 8.3.0], pyOpenSSL 19.1.0 (OpenSSL 1.1.1k  25 Mar 2021), cryptography 3.4.7, Platform Linux-5.19.0-38-generic-x86_64-with-glibc2.28
+2023-04-03 19:34:55,441 - scrapy.utils.log - DEBUG - Using reactor: twisted.internet.epollreactor.EPollReactor
+2023-04-03 19:34:55,584 - scrapy.crawler - INFO - Overridden settings:
+{'BOT_NAME': 'base-crawler',
+ 'CLOSESPIDER_ERRORCOUNT': 1,
+ 'DOWNLOAD_DELAY': 0.3,
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOG_ENABLED': False,
+ 'NEWSPIDER_MODULE': 'base_crawler.spiders',
+ 'SPIDER_LOADER_WARN_ONLY': True,
+ 'SPIDER_MODULES': ['base_crawler.spiders', 'spiders', 'tests.spiders'],
+ 'STATS_CLASS': 'base_crawler.stats_collector.MongoStatsCollector'}
+2023-04-03 19:34:55,610 - scrapy.extensions.telnet - INFO - Telnet Password: 0007ab3700693875
+2023-04-03 19:34:55,815 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.closespider.CloseSpider',
+ 'scrapy.extensions.logstats.LogStats',
+ 'spidermon.contrib.scrapy.extensions.Spidermon']
+2023-04-03 19:34:55,830 - py.warnings - WARNING - /usr/local/lib/python3.9/site-packages/pymongo/collection.py:1532: UserWarning: use an explicit session with no_cursor_timeout=True otherwise the cursor may still timeout after 30 minutes, for more info see https://docs.mongodb.com/v4.4/reference/method/cursor.noCursorTimeout/#session-idle-timeout-overrides-nocursortimeout
+  return Cursor(self, *args, **kwargs)
+
+2023-04-03 19:34:55,917 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-04-03 19:34:55,925 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-04-03 19:34:55,981 - py.warnings - WARNING - /app/base_crawler/pipelines/transformer/judgment_court_normalizer.py:11: DeprecationWarning: invalid escape sequence \s
+  return re.sub("-\scadeira\s+\d+", "", text, flags=IGNORECASE).strip()
+
+2023-04-03 19:34:55,989 - scrapy.middleware - INFO - Enabled item pipelines:
+['base_crawler.pipelines.item_prepare_pipeline.ItemPreparePipeline',
+ 'base_crawler.pipelines.schema_validation_pipeline.SchemaValidationPipeline',
+ 'base_crawler.pipelines.mongo_pipeline.MongoPipeline',
+ 'base_crawler.pipelines.transformer.transformer_pipeline.TransformerPipeline']
+2023-04-03 19:34:55,992 - scrapy.core.engine - INFO - Spider opened
+2023-04-03 19:34:56,006 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-04-03 19:34:56,011 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2023-04-03 19:34:56,013 - crawler-juris-stj-acordao-d-1 - INFO - START REQUESTS
+2023-04-03 19:34:56,017 - py.warnings - WARNING - /usr/local/lib/python3.9/site-packages/scrapy/core/downloader/contextfactory.py:54: DeprecationWarning: Passing method to twisted.internet.ssl.CertificateOptions was deprecated in Twisted 17.1.0. Please use a combination of insecurelyLowerMinimumTo, raiseMinimumTo, and lowerMaximumSecurityTo instead, as Twisted will correctly configure the method.
+  return CertificateOptions(
+
+2023-04-03 19:34:56,336 - scrapy.core.engine - DEBUG - Crawled (200) <GET https://www.stj.jus.br/sites/portalp/Inicio> (referer: None)
+2023-04-03 19:34:56,460 - crawler-juris-stj-acordao-d-1 - INFO - ON FIRST PAGE
+2023-04-03 19:34:59,559 - scrapy.core.engine - DEBUG - Crawled (200) <POST https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp> (referer: https://www.stj.jus.br/sites/portalp/Inicio)
+2023-04-03 19:34:59,668 - crawler-juris-stj-acordao-d-1 - INFO - ON RESULT PAGE
+2023-04-03 19:35:00,524 - crawler-juris-stj-acordao-d-1 - INFO - 
+--------------------------INPUT INFO--------------------------
+INPUT = {'date': '2022-04-27'}
+TOTAL DOCUMENTOS = 187
+TOTAL DOCUMENTOS JA CRAWLEADOS = 185
+TOTAL DE DOCUMENTOS RESTANTES = 2
+----------------------------------------------------------------
+2023-04-03 19:35:03,764 - scrapy.core.engine - DEBUG - Crawled (200) <POST https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp> (referer: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp)
+2023-04-03 19:35:03,873 - crawler-juris-stj-acordao-d-1 - INFO - RESULTS ANOTHER PAGE
+2023-04-03 19:35:06,602 - scrapy.core.engine - DEBUG - Crawled (200) <POST https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp> (referer: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp)
+2023-04-03 19:35:06,672 - scrapy.core.engine - DEBUG - Crawled (200) <POST https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp> (referer: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp)
+2023-04-03 19:35:06,707 - crawler-juris-stj-acordao-d-1 - INFO - RESULTS ANOTHER PAGE
+2023-04-03 19:35:08,088 - crawler-juris-stj-acordao-d-1 - INFO - RESULTS ANOTHER PAGE
+2023-04-03 19:35:09,159 - scrapy.core.engine - DEBUG - Crawled (200) <POST https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp> (referer: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp)
+2023-04-03 19:35:09,263 - crawler-juris-stj-acordao-d-1 - INFO - RESULTS ANOTHER PAGE
+2023-04-03 19:35:10,552 - scrapy.core.engine - INFO - Closing spider (finished)
+2023-04-03 19:35:10,554 - crawler-juris-stj-acordao-d-1 - INFO - ==== seen_ids 0
+2023-04-03 19:35:10,557 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] ------------------------------ MONITORS ------------------------------
+2023-04-03 19:35:10,561 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] ItemCountMonitor/test_expected_items_scraped_is_equal_items_scraped... FAIL
+2023-04-03 19:35:10,563 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] Finish Reason Monitor/Should have the expected finished reason(s)... OK
+2023-04-03 19:35:10,563 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] ----------------------------------------------------------------------
+2023-04-03 19:35:10,564 - crawler-juris-stj-acordao-d-1 - ERROR - [Spidermon] 
+======================================================================
+FAIL: ItemCountMonitor/test_expected_items_scraped_is_equal_items_scraped
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/base_crawler/monitors.py", line 58, in test_expected_items_scraped_is_equal_items_scraped
+    self.assertTrue(items_scraped >= ceil(expected_num_items * 0.9))
+AssertionError: False is not true
+
+2023-04-03 19:35:10,565 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] 2 monitors in 0.000s
+2023-04-03 19:35:10,565 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] FAILED (failures=1)
+2023-04-03 19:35:10,566 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] -------------------------- FINISHED ACTIONS --------------------------
+2023-04-03 19:35:10,566 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] ----------------------------------------------------------------------
+2023-04-03 19:35:10,567 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] 0 actions in 0.000s
+2023-04-03 19:35:10,568 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] OK
+2023-04-03 19:35:10,568 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] --------------------------- PASSED ACTIONS ---------------------------
+2023-04-03 19:35:10,569 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] ----------------------------------------------------------------------
+2023-04-03 19:35:10,571 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] 0 actions in 0.000s
+2023-04-03 19:35:10,573 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] OK
+2023-04-03 19:35:10,574 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] --------------------------- FAILED ACTIONS ---------------------------
+2023-04-03 19:35:10,579 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): discordapp.com:443
+2023-04-03 19:35:10,592 - py.warnings - WARNING - /usr/local/lib/python3.9/site-packages/urllib3/connection.py:387: SystemTimeWarning: System time is way off (before 2022-01-01). This will probably lead to SSL verification errors
+  warnings.warn(
+
+2023-04-03 19:35:10,935 - urllib3.connectionpool - DEBUG - https://discordapp.com:443 "POST /api/webhooks/1034990199639384124/XU10zP2DYemYcKL_HsmZwsWjR7BNbc0J_uZFoTfQVL0hTBYITTJjoCEnt2f__yQV2ivH HTTP/1.1" 204 0
+2023-04-03 19:35:10,944 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] CustomSendDiscordMessage... OK
+2023-04-03 19:35:10,949 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] ----------------------------------------------------------------------
+2023-04-03 19:35:10,951 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] 1 action in 0.000s
+2023-04-03 19:35:10,954 - crawler-juris-stj-acordao-d-1 - INFO - [Spidermon] OK
+2023-04-03 19:35:10,958 - scrapy.statscollectors - INFO - Dumping Scrapy stats:
+{'downloader/request_bytes': 7243,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/request_method_count/POST': 5,
+ 'downloader/response_bytes': 4598788,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/200': 6,
+ 'elapsed_time_seconds': 0.0,
+ 'expected_num_items': 2,
+ 'finish_reason': 'finished',
+ 'finish_time': FakeDatetime(2021, 1, 1, 0, 0),
+ 'httpcompression/response_bytes': 3186,
+ 'httpcompression/response_count': 1,
+ 'input': {'date': '2022-04-27'},
+ 'log_count/DEBUG': 8,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 38,
+ 'log_count/WARNING': 4,
+ 'memusage/max': 75026432,
+ 'memusage/startup': 75026432,
+ 'request_depth_max': 2,
+ 'response_received_count': 6,
+ 'scheduler/dequeued': 6,
+ 'scheduler/dequeued/memory': 6,
+ 'scheduler/enqueued': 6,
+ 'scheduler/enqueued/memory': 6,
+ 'spider_name': 'crawler-juris-stj-acordao-d-1',
+ 'start_time': FakeDatetime(2021, 1, 1, 0, 0),
+ 'total_results': 187}
+2023-04-03 19:35:10,984 - scrapy.core.engine - INFO - Spider closed (finished)
+2023-04-03 19:35:13,117 - scrapy.crawler - INFO - Overridden settings:
+{'BOT_NAME': 'base-crawler',
+ 'CLOSESPIDER_ERRORCOUNT': 1,
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOG_ENABLED': False,
+ 'NEWSPIDER_MODULE': 'base_crawler.spiders',
+ 'SPIDER_LOADER_WARN_ONLY': True,
+ 'SPIDER_MODULES': ['base_crawler.spiders', 'spiders', 'tests.spiders'],
+ 'STATS_CLASS': 'base_crawler.stats_collector.MongoStatsCollector'}
+2023-04-03 19:35:13,130 - scrapy.extensions.telnet - INFO - Telnet Password: 0aca7ddcfb07ebaa
+2023-04-03 19:35:13,179 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.closespider.CloseSpider',
+ 'scrapy.extensions.logstats.LogStats',
+ 'spidermon.contrib.scrapy.extensions.Spidermon']
+2023-04-03 19:35:13,211 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-04-03 19:35:13,217 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-04-03 19:35:13,220 - scrapy.middleware - INFO - Enabled item pipelines:
+['base_crawler.pipelines.item_prepare_pipeline.ItemPreparePipeline',
+ 'base_crawler.pipelines.schema_validation_pipeline.SchemaValidationPipeline',
+ 'base_crawler.pipelines.mongo_pipeline.MongoPipeline']
+2023-04-03 19:35:13,221 - scrapy.core.engine - INFO - Spider opened
+2023-04-03 19:35:13,230 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-04-03 19:35:13,244 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2023-04-03 19:35:13,246 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.set_writer(12, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0>>)
+2023-04-03 19:35:13,247 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - set_writer(12, _) updated handler RdWr
+2023-04-03 19:35:13,249 - pika.adapters.utils.io_services_utils - DEBUG - Turned on writability watcher: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47852), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,252 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.remove_writer(12)
+2023-04-03 19:35:13,254 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - remove_writer(12) updated handler Rd
+2023-04-03 19:35:13,255 - pika.adapters.utils.io_services_utils - DEBUG - Turned off writability watcher: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47852), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,257 - root - DEBUG - Received message is b'exit'
+2023-04-03 19:35:13,258 - root - INFO - Exit message received, will stop consuming from queue
+2023-04-03 19:35:13,260 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.set_writer(12, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0>>)
+2023-04-03 19:35:13,261 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - set_writer(12, _) updated handler RdWr
+2023-04-03 19:35:13,263 - pika.adapters.utils.io_services_utils - DEBUG - Turned on writability watcher: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47852), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,265 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.remove_writer(12)
+2023-04-03 19:35:13,266 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - remove_writer(12) updated handler Rd
+2023-04-03 19:35:13,269 - pika.adapters.utils.io_services_utils - DEBUG - Turned off writability watcher: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47852), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,270 - pika.adapters.blocking_connection - DEBUG - Cancelling 1 consumers
+2023-04-03 19:35:13,272 - pika.channel - DEBUG - Cancelling consumer: ctag1.93c32478ccfd43e49aed92aaaa49c3df (nowait=False)
+2023-04-03 19:35:13,273 - pika.callback - DEBUG - Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7f01d04c1ac0>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2023-04-03 19:35:13,274 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.set_writer(12, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0>>)
+2023-04-03 19:35:13,275 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - set_writer(12, _) updated handler RdWr
+2023-04-03 19:35:13,277 - pika.adapters.utils.io_services_utils - DEBUG - Turned on writability watcher: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47852), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,279 - pika.channel - DEBUG - Entering blocking state on frame <Basic.Cancel(['consumer_tag=ctag1.93c32478ccfd43e49aed92aaaa49c3df', 'nowait=False'])>; acceptable_replies=[(<class 'pika.spec.Basic.CancelOk'>, {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'})]
+2023-04-03 19:35:13,281 - pika.channel - DEBUG - Adding on_synchronous_complete callback
+2023-04-03 19:35:13,283 - pika.callback - DEBUG - Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'}, 'calls': 1}
+2023-04-03 19:35:13,286 - pika.channel - DEBUG - Adding passed-in RPC response callback
+2023-04-03 19:35:13,287 - pika.callback - DEBUG - Added: {'callback': <bound method Channel._on_cancelok of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'}, 'calls': 1}
+2023-04-03 19:35:13,288 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.remove_writer(12)
+2023-04-03 19:35:13,289 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - remove_writer(12) updated handler Rd
+2023-04-03 19:35:13,290 - pika.adapters.utils.io_services_utils - DEBUG - Turned off writability watcher: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47852), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,291 - pika.callback - DEBUG - Processing 1:Basic.CancelOk
+2023-04-03 19:35:13,291 - pika.callback - DEBUG - Processing use of oneshot callback
+2023-04-03 19:35:13,292 - pika.callback - DEBUG - 0 registered uses left
+2023-04-03 19:35:13,293 - pika.callback - DEBUG - Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7f01d04c1ac0>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2023-04-03 19:35:13,295 - pika.callback - DEBUG - Processing use of oneshot callback
+2023-04-03 19:35:13,297 - pika.callback - DEBUG - 0 registered uses left
+2023-04-03 19:35:13,298 - pika.callback - DEBUG - Comparing {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'} to {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'}
+2023-04-03 19:35:13,299 - pika.callback - DEBUG - Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'}, 'calls': 0}
+2023-04-03 19:35:13,301 - pika.callback - DEBUG - Processing use of oneshot callback
+2023-04-03 19:35:13,303 - pika.callback - DEBUG - 0 registered uses left
+2023-04-03 19:35:13,303 - pika.callback - DEBUG - Comparing {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'} to {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'}
+2023-04-03 19:35:13,304 - pika.callback - DEBUG - Removing callback #0: {'callback': <bound method Channel._on_cancelok of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.93c32478ccfd43e49aed92aaaa49c3df'}, 'calls': 0}
+2023-04-03 19:35:13,305 - pika.callback - DEBUG - Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7f01d04c1ac0>> for "1:Basic.CancelOk"
+2023-04-03 19:35:13,306 - pika.callback - DEBUG - Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>> for "1:Basic.CancelOk"
+2023-04-03 19:35:13,307 - pika.channel - DEBUG - 0 blocked frames
+2023-04-03 19:35:13,308 - pika.callback - DEBUG - Calling <bound method Channel._on_cancelok of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d94f7be0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>> for "1:Basic.CancelOk"
+2023-04-03 19:35:13,308 - pika.adapters.utils.io_services_utils - DEBUG - Recv would block on <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47852), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,309 - pika.adapters.blocking_connection - DEBUG - Channel.close(0, Normal shutdown)
+2023-04-03 19:35:13,311 - pika.channel - INFO - Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2023-04-03 19:35:13,312 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.set_writer(16, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640>>)
+2023-04-03 19:35:13,314 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - set_writer(16, _) updated handler RdWr
+2023-04-03 19:35:13,315 - pika.adapters.utils.io_services_utils - DEBUG - Turned on writability watcher: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,317 - pika.channel - DEBUG - Entering blocking state on frame <Channel.Close(['class_id=0', 'method_id=0', 'reply_code=0', 'reply_text=Normal shutdown'])>; acceptable_replies=[<class 'pika.spec.Channel.CloseOk'>]
+2023-04-03 19:35:13,318 - pika.channel - DEBUG - Adding on_synchronous_complete callback
+2023-04-03 19:35:13,319 - pika.callback - DEBUG - Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2023-04-03 19:35:13,321 - pika.channel - DEBUG - Adding passed-in RPC response callback
+2023-04-03 19:35:13,322 - pika.callback - DEBUG - Added: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2023-04-03 19:35:13,322 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.remove_writer(16)
+2023-04-03 19:35:13,324 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - remove_writer(16) updated handler Rd
+2023-04-03 19:35:13,324 - pika.adapters.utils.io_services_utils - DEBUG - Turned off writability watcher: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,325 - pika.callback - DEBUG - Processing 1:Channel.CloseOk
+2023-04-03 19:35:13,327 - pika.callback - DEBUG - Processing use of oneshot callback
+2023-04-03 19:35:13,328 - pika.callback - DEBUG - 0 registered uses left
+2023-04-03 19:35:13,329 - pika.callback - DEBUG - Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2023-04-03 19:35:13,331 - pika.callback - DEBUG - Processing use of oneshot callback
+2023-04-03 19:35:13,332 - pika.callback - DEBUG - 0 registered uses left
+2023-04-03 19:35:13,334 - pika.callback - DEBUG - Removing callback #0: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2023-04-03 19:35:13,335 - pika.callback - DEBUG - Calling <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2023-04-03 19:35:13,336 - pika.channel - DEBUG - 0 blocked frames
+2023-04-03 19:35:13,337 - pika.callback - DEBUG - Calling <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2023-04-03 19:35:13,338 - pika.channel - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2023-04-03 19:35:13,339 - pika.callback - DEBUG - Processing 1:_on_channel_close
+2023-04-03 19:35:13,340 - pika.callback - DEBUG - Calling <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>> for "1:_on_channel_close"
+2023-04-03 19:35:13,341 - pika.adapters.blocking_connection - DEBUG - _on_channel_closed: ChannelClosedByClient: (0) 'Normal shutdown'; <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>>
+2023-04-03 19:35:13,342 - pika.callback - DEBUG - Processing 1:_on_channel_cleanup
+2023-04-03 19:35:13,344 - pika.callback - DEBUG - Processing use of oneshot callback
+2023-04-03 19:35:13,345 - pika.callback - DEBUG - 0 registered uses left
+2023-04-03 19:35:13,346 - pika.callback - DEBUG - Removing callback #0: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 0}
+2023-04-03 19:35:13,351 - pika.callback - DEBUG - Calling <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>> for "1:_on_channel_cleanup"
+2023-04-03 19:35:13,355 - pika.connection - DEBUG - Removed channel 1
+2023-04-03 19:35:13,360 - pika.callback - DEBUG - Clearing out '1' from the stack
+2023-04-03 19:35:13,366 - pika.adapters.utils.io_services_utils - DEBUG - Recv would block on <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,367 - pika.adapters.blocking_connection - INFO - Closing connection (200): Normal shutdown
+2023-04-03 19:35:13,368 - pika.connection - DEBUG - New Connection state: CLOSING (prev=OPEN)
+2023-04-03 19:35:13,370 - pika.connection - INFO - Closing connection (200): 'Normal shutdown'
+2023-04-03 19:35:13,371 - pika.callback - DEBUG - Added: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2023-04-03 19:35:13,371 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.set_writer(16, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640>>)
+2023-04-03 19:35:13,372 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - set_writer(16, _) updated handler RdWr
+2023-04-03 19:35:13,373 - pika.adapters.utils.io_services_utils - DEBUG - Turned on writability watcher: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,373 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.remove_writer(16)
+2023-04-03 19:35:13,374 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - remove_writer(16) updated handler Rd
+2023-04-03 19:35:13,375 - pika.adapters.utils.io_services_utils - DEBUG - Turned off writability watcher: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,376 - pika.callback - DEBUG - Processing 0:Connection.CloseOk
+2023-04-03 19:35:13,380 - pika.callback - DEBUG - Processing use of oneshot callback
+2023-04-03 19:35:13,384 - pika.callback - DEBUG - 0 registered uses left
+2023-04-03 19:35:13,388 - pika.callback - DEBUG - Removing callback #0: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2023-04-03 19:35:13,392 - pika.callback - DEBUG - Calling <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>> for "0:Connection.CloseOk"
+2023-04-03 19:35:13,398 - pika.connection - DEBUG - _on_connection_close_ok: frame=<METHOD(['channel_number=0', 'frame_type=1', 'method=<Connection.CloseOk>'])>
+2023-04-03 19:35:13,399 - pika.heartbeat - DEBUG - Removing timer for next heartbeat send interval
+2023-04-03 19:35:13,400 - pika.adapters.select_connection - DEBUG - remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x7f01d951b400> with deadline=352340.286831244 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x7f01d951b550>>
+2023-04-03 19:35:13,401 - pika.heartbeat - DEBUG - Removing timer for next heartbeat check interval
+2023-04-03 19:35:13,402 - pika.adapters.select_connection - DEBUG - remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x7f01d951b3d0> with deadline=354145.286839906 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x7f01d951b550>>
+2023-04-03 19:35:13,404 - pika.adapters.utils.io_services_utils - INFO - Aborting transport connection: state=1; <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,406 - pika.adapters.utils.io_services_utils - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,409 - pika.adapters.utils.io_services_utils - INFO - Deactivating transport: state=1; <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,411 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.remove_reader(16)
+2023-04-03 19:35:13,414 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - remove_reader(16) removed handler
+2023-04-03 19:35:13,415 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - SelectorIOServicesAdapter.remove_writer(16)
+2023-04-03 19:35:13,416 - pika.adapters.utils.selector_ioloop_adapter - DEBUG - remove_writer(16) neither was set.
+2023-04-03 19:35:13,417 - pika.adapters.select_connection - DEBUG - add_callback_threadsafe: added callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640>>, None)
+2023-04-03 19:35:13,419 - pika.adapters.utils.io_services_utils - DEBUG - Leaving Plaintext consumer due to inactive state: state=3; <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,420 - pika.adapters.select_connection - DEBUG - process_timeouts: invoking callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f01d951b640>>, None)
+2023-04-03 19:35:13,421 - pika.adapters.utils.io_services_utils - DEBUG - Concluding transport shutdown: state=3; error=None
+2023-04-03 19:35:13,424 - pika.adapters.base_connection - DEBUG - connection_lost: None
+2023-04-03 19:35:13,428 - pika.connection - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2023-04-03 19:35:13,431 - pika.connection - DEBUG - New Connection state: CLOSED (prev=CLOSING)
+2023-04-03 19:35:13,434 - pika.connection - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2023-04-03 19:35:13,437 - pika.callback - DEBUG - Processing 0:_on_connection_closed
+2023-04-03 19:35:13,439 - pika.callback - DEBUG - Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7f01d847ef00>> for "0:_on_connection_closed"
+2023-04-03 19:35:13,442 - pika.connection - DEBUG - New Connection state: CLOSED (prev=CLOSED)
+2023-04-03 19:35:13,443 - pika.callback - DEBUG - Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2023-04-03 19:35:13,447 - pika.callback - DEBUG - Incremented callback reference counter: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 2}
+2023-04-03 19:35:13,449 - pika.adapters.utils.io_services_utils - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 47860), raddr=('172.24.0.3', 5672)>
+2023-04-03 19:35:13,450 - pika.adapters.blocking_connection - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2023-04-03 19:35:13,475 - scrapy.downloadermiddlewares.retry - DEBUG - Retrying <GET http://example.com> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]

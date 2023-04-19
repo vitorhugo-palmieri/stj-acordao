@@ -1,0 +1,65 @@
+services:
+    mongo:
+        image: mongo
+        restart: always
+        container_name: mongo
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+            MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS}
+        ports:
+            - "27017:27017"
+        volumes:
+            - ${HOME}/docker/crawler-juris-stj-acordao/data/db:/data/db
+        networks:
+            - servicesnetwork
+
+    rabbitmq:
+        image: rabbitmq:3.8-management-alpine
+        container_name: 'rabbitmq'
+        ports:
+            - 5672:5672
+            - 15672:15672
+        volumes:
+            - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+            - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        networks:
+            - servicesnetwork
+        healthcheck:
+            test: [ "CMD", "nc", "-z", "localhost", "5672" ]
+            interval: 10s
+            timeout: 30s
+            retries: 5
+
+
+    crawler-juris-stj-acordao:
+        container_name: crawler-juris-stj-acordao
+        image: crawler-juris-stj-acordao
+        volumes:
+            - ./tests/files/debug/:/app/tests/files/debug/
+            - ./tests/files/tests_files/:/app/tests/files/tests_files/
+        links:
+            - mongo
+            - rabbitmq
+        depends_on:
+            mongo:
+                condition: service_started
+            rabbitmq:
+                condition: service_healthy
+        networks:
+            - servicesnetwork
+        environment:
+            MONGO_USER: ${MONGO_USER}
+            MONGO_PASSWORD: ${MONGO_PASSWORD}
+            MONGO_URL: ${MONGO_URL}
+            RABBIT_URL: ${RABBIT_URL}
+            BUCKET_URL: ${BUCKET_URL}
+            CAPTCHA_API_KEY: ${CAPTCHA_API_KEY}
+            DISCORD_WEBHOOK: ${DISCORD_WEBHOOK}
+            MONGO_DATABASE: "STK_inputs"
+networks:
+    servicesnetwork:
+        driver: bridge
+
+volumes:
+    data01:
+        driver: local
